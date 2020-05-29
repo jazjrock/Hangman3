@@ -10,12 +10,12 @@
 		<p id="hidden_letters">test</p>
 		<h3>Enter a letter:</h3>
 		<p id="wrongLetters">test</p>
+		<img src = "Images/hangman_stage1.png" >
 		<script>
 var rightLetters = ""
 var wrongLetters = ""
-var hiddenWord = "";
 var element = document.getElementById("hidden_letters");
-
+var element2 = document.getElementById("wrongLetters");
 var bank = ["Banana", "Orange", "Apple", "Mango"]; //word bank
 bank.length;
 var x = Math.floor(Math.random()* bank.length);
@@ -23,7 +23,7 @@ var word = bank[x].toLowerCase();
 console.log(x);
 console.log(word);
 updatehiddenword()
-
+UpdateWrongLetters()
 
 document.addEventListener('keydown', (event) => console.log(event.key))
 document.addEventListener('keyup', (event) => {
@@ -40,7 +40,7 @@ document.addEventListener('keyup', (event) => {
 // This is Sylvain comment
 function updatehiddenword(){
 	var hiddenWord = ""
-for (let i = 0; i < word.length; i++){
+	for (let i = 0; i < word.length; i++){
 	   var c = word.charAt(i)
 	   if (rightLetters.includes(c)){
 			hiddenWord = hiddenWord + ' ' + c
@@ -51,11 +51,20 @@ for (let i = 0; i < word.length; i++){
 	element.textContent = hiddenWord;
 }
 
+function UpdateWrongLetters(){
+	var hiddenWord = ""
+	for (let i = 0; i < wrongLetters.length; i++){
+	   var v = wrongLetters.charAt(i)
+		hiddenWord = hiddenWord + ' ' + v
+	}
+	element2.textContent = hiddenWord;
+}
 
-
+//document.write (wrongLetters); //prints the wrong letters
 
 
 		</script>
 
 	</body>
 </html>
+
