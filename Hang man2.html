@@ -15,6 +15,7 @@ var rightLetters = ""
 var wrongLetters = ""
 var element = document.getElementById("hidden_letters");
 var element2 = document.getElementById("wrongLetters");
+var element3 = document.getElementById("firstmistake");
 var bank = ["Banana", "Orange", "Apple", "Mango"]; //word bank
 bank.length;
 var x = Math.floor(Math.random()* bank.length);
@@ -23,14 +24,19 @@ console.log(x);
 console.log(word);
 updatehiddenword()
 UpdateWrongLetters()
+selectImage()
 
 document.addEventListener('keydown', (event) => console.log(event.key))
 document.addEventListener('keyup', (event) => {
 	var userLetter = event.key
-	if (userLetter >= 'a' && userLetter <= 'z'){
-		if (word.includes(userLetter)){
-			rightLetters += userLetter
-			updatehiddenword()
+	if (word.includes(userLetter)){
+		rightLetters += userLetter
+		updatehiddenword()
+
+	} else if (!wrongLetters.includes(userLetter)) {
+		wrongLetters += userLetter
+		UpdateWrongLetters()
+		selectImage()
 
 		} else if (!wrongLetters.includes(userLetter)) {
 			wrongLetters += userLetter
@@ -61,6 +67,13 @@ function UpdateWrongLetters(){
 	}
 	element2.textContent = hiddenWord;
 }
+
+function selectImage(){
+	var imageNumber = wrongLetters.length + 1
+	element3.src = "Images/hangman_stage"+imageNumber+".png" 
+
+}
+
 
 
 
