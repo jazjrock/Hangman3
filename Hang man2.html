@@ -14,9 +14,8 @@
 		<script>
 var rightLetters = ""
 var wrongLetters = ""
-var hiddenWord = "";
 var element = document.getElementById("hidden_letters");
-
+var element2 = document.getElementById("wrongLetters");
 var bank = ["Banana", "Orange", "Apple", "Mango"]; //word bank
 bank.length;
 var x = Math.floor(Math.random()* bank.length);
@@ -24,7 +23,7 @@ var word = bank[x].toLowerCase();
 console.log(x);
 console.log(word);
 updatehiddenword()
-
+UpdateWrongLetters()
 
 document.addEventListener('keydown', (event) => console.log(event.key))
 document.addEventListener('keyup', (event) => {
@@ -35,11 +34,13 @@ document.addEventListener('keyup', (event) => {
 
 	} else {
 		wrongLetters += userLetter
+		UpdateWrongLetters()
+
 	}
 }, false);
 function updatehiddenword(){
 	var hiddenWord = ""
-for (let i = 0; i < word.length; i++){
+	for (let i = 0; i < word.length; i++){
 	   var c = word.charAt(i)
 	   if (rightLetters.includes(c)){
 			hiddenWord = hiddenWord + ' ' + c
@@ -50,8 +51,16 @@ for (let i = 0; i < word.length; i++){
 	element.textContent = hiddenWord;
 }
 
+function UpdateWrongLetters(){
+	var hiddenWord = ""
+	for (let i = 0; i < wrongLetters.length; i++){
+	   var v = wrongLetters.charAt(i)
+		hiddenWord = hiddenWord + ' ' + v
+	}
+	element2.textContent = hiddenWord;
+}
 
-document.write (wrongLetters); //prints the wrong letters
+//document.write (wrongLetters); //prints the wrong letters
 
 
 		</script>
