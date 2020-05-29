@@ -10,7 +10,6 @@
 		<p id="hidden_letters">test</p>
 		<h3>Enter a letter:</h3>
 		<p id="wrongLetters">test</p>
-		<img src = "Images/hangman_stage1.png" >
 		<script>
 var rightLetters = ""
 var wrongLetters = ""
@@ -32,9 +31,10 @@ document.addEventListener('keyup', (event) => {
 		rightLetters += userLetter
 		updatehiddenword()
 
-	} else {
+	} else if (!wrongLetters.includes(userLetter)) {
 		wrongLetters += userLetter
 		console.log(wrongLetters)
+		UpdateWrongLetters()
 	}
 }, false);
 // This is Sylvain comment
