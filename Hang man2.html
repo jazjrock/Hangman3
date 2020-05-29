@@ -29,14 +29,10 @@ selectImage()
 document.addEventListener('keydown', (event) => console.log(event.key))
 document.addEventListener('keyup', (event) => {
 	var userLetter = event.key
-	if (word.includes(userLetter)){
-		rightLetters += userLetter
-		updatehiddenword()
-
-	} else if (!wrongLetters.includes(userLetter)) {
-		wrongLetters += userLetter
-		UpdateWrongLetters()
-		selectImage()
+	if (userLetter >= 'a' && userLetter <= 'z'){
+		if (word.includes(userLetter)){
+			rightLetters += userLetter
+			updatehiddenword()
 
 		} else if (!wrongLetters.includes(userLetter)) {
 			wrongLetters += userLetter
