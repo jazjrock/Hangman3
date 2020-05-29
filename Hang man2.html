@@ -32,7 +32,7 @@ document.addEventListener('keyup', (event) => {
 		rightLetters += userLetter
 		updatehiddenword()
 
-	} else {
+	} else if (!wrongLetters.includes(userLetter)){		
 		wrongLetters += userLetter
 		UpdateWrongLetters()
 
@@ -55,6 +55,7 @@ function UpdateWrongLetters(){
 	var hiddenWord = ""
 	for (let i = 0; i < wrongLetters.length; i++){
 	   var v = wrongLetters.charAt(i)
+		if 
 		hiddenWord = hiddenWord + ' ' + v
 	}
 	element2.textContent = hiddenWord;
