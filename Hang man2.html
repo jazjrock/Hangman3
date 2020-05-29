@@ -27,14 +27,16 @@ UpdateWrongLetters()
 document.addEventListener('keydown', (event) => console.log(event.key))
 document.addEventListener('keyup', (event) => {
 	var userLetter = event.key
-	if (word.includes(userLetter)){
-		rightLetters += userLetter
-		updatehiddenword()
+	if (userLetter >= 'a' && userLetter <= 'z'){
+		if (word.includes(userLetter)){
+			rightLetters += userLetter
+			updatehiddenword()
 
-	} else if (!wrongLetters.includes(userLetter)) {
-		wrongLetters += userLetter
-		console.log(wrongLetters)
-		UpdateWrongLetters()
+		} else if (!wrongLetters.includes(userLetter)) {
+			wrongLetters += userLetter
+			console.log(wrongLetters)
+			UpdateWrongLetters()
+		}
 	}
 }, false);
 // This is Sylvain comment
