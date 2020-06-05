@@ -10,12 +10,13 @@
 		<p id="hidden_letters">test</p>
 		<h3>Enter a letter:</h3>
 		<p id="wrongLetters">test</p>
-		<img src = "Images/hangman_stage1.png" >
+		<img src = "Images/hangman_stage1.png" id ="img" >
 		<script>
 var rightLetters = ""
 var wrongLetters = ""
 var element = document.getElementById("hidden_letters");
 var element2 = document.getElementById("wrongLetters");
+var element3 = document.getElementById("img")
 var bank = ["Banana", "Orange", "Apple", "Mango"]; //word bank
 bank.length;
 var x = Math.floor(Math.random()* bank.length);
@@ -24,6 +25,7 @@ console.log(x);
 console.log(word);
 updatehiddenword()
 UpdateWrongLetters()
+selectImage()
 
 document.addEventListener('keydown', (event) => console.log(event.key))
 document.addEventListener('keyup', (event) => {
@@ -35,6 +37,7 @@ document.addEventListener('keyup', (event) => {
 	} else if (!wrongLetters.includes(userLetter)) {
 		wrongLetters += userLetter
 		UpdateWrongLetters()
+		selectImage()
 
 	}
 }, false);
@@ -60,7 +63,12 @@ function UpdateWrongLetters(){
 	element2.textContent = hiddenWord;
 }
 
+function selectImage(){
+	var imageNumber = wrongLetters.length +1
+	element3.src = "Images/hangman_stage" +imageNumber+".png" 
 
+
+}
 
 
 		</script>
