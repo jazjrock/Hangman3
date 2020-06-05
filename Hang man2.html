@@ -63,9 +63,23 @@ function UpdateWrongLetters(){
 	element2.textContent = hiddenWord;
 }
 
+function gameOver1(){
+	var gameOver = false
+	if (gameOver == true) {
+		element3.src = "Images/hangman_gamover.png"
+
+	}
+
+
+}
 function selectImage(){
 	var imageNumber = wrongLetters.length + 1
-	element3.src = "Images/hangman_stage"+imageNumber+".png" 
+	if (imageNumber < 8){
+		gameOver = true
+	} else  {
+		element3.src = "Images/hangGman_stage"+imageNumber+".png"
+	}
+	
 
 }
 
