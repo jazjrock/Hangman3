@@ -38,11 +38,10 @@ document.addEventListener('keyup', (event) => {
 		UpdateWrongLetters()
 		selectImage()
 
-		} else if (!wrongLetters.includes(userLetter)) {
-			wrongLetters += userLetter
-			console.log(wrongLetters)
-			UpdateWrongLetters()
-		}
+	} else if (!wrongLetters.includes(userLetter)) {
+		wrongLetters += userLetter
+		console.log(wrongLetters)
+		UpdateWrongLetters()
 	}
 }, false);
 // This is Sylvain comment
@@ -81,15 +80,9 @@ function selectImage() {
 	if (imageNumber < 8) {
 		gameOver = true
 	} else {
-	element3.src = "Images/hangman_stage"+imageNumber+".png" 
-
-}''
-
-
-
+		element3.src = "Images/hangman_stage"+imageNumber+".png" 
+	}
 }
-
-
 
 		</script>
 
