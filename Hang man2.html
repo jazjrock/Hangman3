@@ -6,7 +6,7 @@
 	</head>
 	<body>
 	
-		<h1>Can you find my secret word?</h1>
+		<h1 id = "mainTitle"> Can you find my secret word? </h1>
 		<p id="hidden_letters">test</p>
 		<h3>Enter a letter:</h3>
 		<p id="wrongLetters">test</p>
@@ -17,6 +17,7 @@ var wrongLetters = ""
 var element = document.getElementById("hidden_letters");
 var element2 = document.getElementById("wrongLetters");
 var element3 = document.getElementById("firstmistake");
+var mainTitle = document.getElementById("mainTitle");
 var bank = ["Banana", "Orange", "Apple", "Mango"]; //word bank
 bank.length;
 var x = Math.floor(Math.random()* bank.length);
@@ -64,25 +65,26 @@ function UpdateWrongLetters(){
 }
 
 function gameOver1() {
-	var gameOver = false
-	if (gameOver == true) {
-		
-	}
+	
+		mainTitle.textContent = word;
+
+	
 }
 
 
 function selectImage() {
 	var imageNumber = wrongLetters.length + 1
-	if (imageNumber < 8) {
-		gameOver = true
-	} else {
-	element3.src = "Images/hangman_stage"+imageNumber+".png" 
+	element3.src = "Images/hangman_stage"+imageNumber+".png"
+	if (imageNumber => 8) {
+		gameOver1()
+	}
+	 
 
 }''
 
 
 
-}
+
 
 
 
