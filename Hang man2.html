@@ -40,8 +40,13 @@ document.addEventListener('keyup', (event) => {
 		UpdateWrongLetters()
 		selectImage()
 
+	} else if (!wrongLetters.includes(userLetter)) {
+		wrongLetters += userLetter
+		console.log(wrongLetters)
+		UpdateWrongLetters()
 	}
 }, false);
+// This is Sylvain comment
 function updatehiddenword(){
 	var hiddenWord = ""
 	for (let i = 0; i < word.length; i++){
@@ -80,8 +85,6 @@ function selectImage() {
 
 
 }
-
-
 
 		</script>
 
