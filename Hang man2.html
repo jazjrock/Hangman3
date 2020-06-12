@@ -19,7 +19,7 @@ var element = document.getElementById("hidden_letters");
 var element2 = document.getElementById("wrongLetters");
 var element3 = document.getElementById("firstmistake");
 var mainTitle = document.getElementById("mainTitle");
-var bank = ["Banana", "Orange", "Apple", "Mango"]; //word bank
+var bank = bigbank; //["Banana", "Orange", "Apple", "Mango"]; //word bank
 bank.length;
 var x = Math.floor(Math.random()* bank.length);
 var word = bank[x].toLowerCase();
@@ -89,17 +89,6 @@ function selectImage() {
 	 
 
 }
-
-console.log(httpGet("http://www.mieliestronk.com/corncob_lowercase.txt"))
-function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
-}
-
-
 
 		</script>
 
