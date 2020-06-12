@@ -80,7 +80,7 @@ function gameOver1() {
 function selectImage() {
 	var imageNumber = wrongLetters.length + 1
 	element3.src = "Images/hangman_stage"+imageNumber+".png"
-	if (imageNumber => 8) {
+	if (imageNumber >= 8) {
 		gameOver1()
 	}
 	 
