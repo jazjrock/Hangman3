@@ -11,6 +11,7 @@
 		<h3>Enter a letter:</h3>
 		<p id="wrongLetters">test</p>
 		<img src = "Images/hangman_stage1.png" id="firstmistake">
+		<script type="text/javascript" src="bigbank.js"></script>
 		<script>
 var rightLetters = ""
 var wrongLetters = ""
@@ -27,6 +28,8 @@ console.log(word);
 updatehiddenword()
 UpdateWrongLetters()
 selectImage()
+
+
 
 document.addEventListener('keydown', (event) => console.log(event.key))
 document.addEventListener('keyup', (event) => {
@@ -87,6 +90,14 @@ function selectImage() {
 
 }
 
+console.log(httpGet("http://www.mieliestronk.com/corncob_lowercase.txt"))
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
 
 
 
