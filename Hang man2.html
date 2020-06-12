@@ -74,9 +74,13 @@ function UpdateWrongLetters(){
 
 function gameOver1() {
 	
-		mainTitle.textContent = "your word is " + word;
+		mainTitle.textContent = "your word is ";
+		var a = document.createElement('a')
+		a.appendChild(document.createTextNode(word))
+		//a.title = "This is Link"
+		a.href = "https://www.dictionary.com/browse/" + word;
+		mainTitle.appendChild(a);
 
-	
 }
 
 
