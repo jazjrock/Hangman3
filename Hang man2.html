@@ -45,6 +45,7 @@ var element2 = document.getElementById("wrongLetters");
 var element3 = document.getElementById("firstmistake");
 var mainTitle = document.getElementById("mainTitle");
 var bank = bigbank; //word bank
+var winState = false
 bank.length;
 var x = Math.floor(Math.random()* bank.length);
 var word = bank[x].toLowerCase();
@@ -53,6 +54,7 @@ console.log(word);
 updatehiddenword()
 UpdateWrongLetters()
 selectImage()
+
 
 document.addEventListener('keydown', (event) => console.log(event.key))
 document.addEventListener('keyup', (event) => {
@@ -84,6 +86,11 @@ function updatehiddenword(){
 		}
 	}
 	element.textContent = hiddenWord;
+	if (hiddenWord.indexOf("_") < 1) {
+		winState = true
+		element3.src = "Images/hangman_win"
+
+	}
 }
 
 function UpdateWrongLetters(){
@@ -117,12 +124,10 @@ function selectImage() {
 
 }
 
-function gameWin() {
-	if (hiddenWord.indexOf("_") < 1) {
-		element3.src = "Images/hangman_win"
-	}
 
-}
+
+
+
 
 		</script>
 
