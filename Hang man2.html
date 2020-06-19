@@ -74,9 +74,13 @@ function UpdateWrongLetters(){
 
 function gameOver1() {
 	
-		mainTitle.textContent = "your word is " + word;
+		mainTitle.textContent = "your word is ";
+		var a = document.createElement('a')
+		a.appendChild(document.createTextNode(word))
+		//a.title = "This is Link"
+		a.href = "https://www.dictionary.com/browse/" + word;
+		mainTitle.appendChild(a);
 
-	
 }
 
 
@@ -89,17 +93,6 @@ function selectImage() {
 	 
 
 }
-
-console.log(httpGet("http://www.mieliestronk.com/corncob_lowercase.txt"))
-function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
-}
-
-
 
 		</script>
 
