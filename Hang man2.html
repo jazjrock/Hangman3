@@ -63,17 +63,11 @@ document.addEventListener('keyup', (event) => {
 	if (word.includes(userLetter)){
 		rightLetters += userLetter
 		updatehiddenword()
-
 	} else if (!wrongLetters.includes(userLetter)) {
 		wrongLetters += userLetter
-		UpdateWrongLetters()
-		selectImage()
-
-	} else if (!wrongLetters.includes(userLetter)) {
-		wrongLetters += userLetter
-		console.log(wrongLetters)
 		UpdateWrongLetters()
 	}
+	selectImage()
 }, false);
 // This is Sylvain comment
 function updatehiddenword(){
@@ -87,7 +81,7 @@ function updatehiddenword(){
 		}
 	}
 	element.textContent = hiddenWord;
-	winState = (hiddenWord.indexOf("_") < 1) 
+	winState = (hiddenWord.indexOf("_") < 0) 
 			
 }
 
@@ -108,9 +102,7 @@ function gameOver1() {
 		//a.title = "This is Link"
 		a.href = "https://www.dictionary.com/browse/" + word;
 		mainTitle.appendChild(a);
-
 }
-
 
 function selectImage() {
 	var imageNumber = wrongLetters.length + 1
@@ -120,7 +112,6 @@ function selectImage() {
 	 }
 	else  if (winState) {
 		element3.src = "Images/hangman_win.png"
-	
 	}
 }
 
